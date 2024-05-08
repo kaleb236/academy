@@ -1,0 +1,38 @@
+{
+    "Denizli": {
+        "sicaklik": "22°C",
+        "hissedilen_sicaklik": "28°C",
+        "en_yuksek_sicaklik": "25°C",
+        "durum": "Güneşli",
+        "polen": "Yüksek",
+        "ruzgar": "6 km/s",
+        "nem": "26%",
+        "gorus_mesafesi": "20 km",
+        "basinc": "1008 mb",
+        "yogun_noktasi": "4°"
+    },
+    "Istanbul": {
+        "sicaklik": "24°C",
+        "hissedilen_sicaklik": "26°C",
+        "en_yuksek_sicaklik": "28°C",
+        "durum": "Yağmurlu",
+        "polen": "Normal",
+        "ruzgar": "4 km/s",
+        "nem": "15%",
+        "gorus_mesafesi": "14 km",
+        "basinc": "1010 mb",
+        "yogun_noktasi": "6°"
+    },
+    "Ankara": {
+        "sicaklik": "20°C",
+        "hissedilen_sicaklik": "24°C",
+        "en_yuksek_sicaklik": "23°C",
+        "durum": "Bultulu",
+        "polen": "Yüksek",
+        "ruzgar": "10 km/s",
+        "nem": "7%",
+        "gorus_mesafesi": "20 km",
+        "basinc": "1006 mb",
+        "yogun_noktasi": "3°"
+    }
+}
