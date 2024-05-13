@@ -19,7 +19,7 @@ class ui_windows(QMainWindow):
     
     def initial_variables(self):
         self.current_player = 0
-        self.winning_score = 20
+        self.winning_score = 50
         self.score = [self.ui.score1, self.ui.score2]
         self.current_score = [self.ui.current_score1, self.ui.current_score2]
         self.player_frame = [self.ui.player1_frame, self.ui.player2_frame]
