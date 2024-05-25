@@ -46,9 +46,8 @@ class ui_windows(QMainWindow):
             self.timer.stop()
     
     def move_joystick(self):
-        margin = 0
-        frame_dx = self.ui.back_frame.geometry().x() + margin
-        frame_dy = self.ui.back_frame.geometry().y() + margin
+        frame_dx = self.ui.back_frame.geometry().x()
+        frame_dy = self.ui.back_frame.geometry().y()
         mouse_pos = self.mapFromGlobal(self.cursor().pos())
         button_geo = self.ui.joy_inside.geometry()
         limit_geo = self.ui.joy_outside.geometry()
@@ -61,6 +60,7 @@ class ui_windows(QMainWindow):
         if d <= limit_geo.height()/2:
             x = int(mouse_pos.x() - frame_dx - button_geo.width()/2)
             y = int(mouse_pos.y() - frame_dy - button_geo.height()/2)
+            self.ui.joy_inside.move(x, y)
 
             max_linear_vel = limit_geo.x() + limit_geo.width() - cx
             max_angular_vel = limit_geo.y() + limit_geo.height() - cy
@@ -69,7 +69,6 @@ class ui_windows(QMainWindow):
             self.ang_vel = ((x + button_geo.width()/2) - cx) * self.angular_vel / max_linear_vel
             self.lin_vel = (-(y + button_geo.height()/2) + cy) * self.linear_vel / max_angular_vel
             self.set_velocity()
-            self.ui.joy_inside.move(x, y)
 
     def set_velocity(self):
         self.ui.ang_speed_value.setText(f"{round(self.ang_vel, 2)}")
