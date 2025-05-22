@@ -84,9 +84,9 @@ class MainWindow(QWidget):
         self.setLayout(window_layout)
 
     def ileri_callback(self):
-        self.robot_client.move_forward(0.2)
+        self.robot_client.move_forward()
     def geri_callback(self):
-        self.robot_client.move_backward(0.2)
+        self.robot_client.move_backward()
     
     def increase_callback(self):
         self.robot_client.increase_vel(0.02)

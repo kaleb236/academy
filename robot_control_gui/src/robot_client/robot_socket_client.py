@@ -7,8 +7,8 @@ class RobotSocketClient:
         self.host = host
         self.port = port
 
-        self.current_vel = 0.0
-        self.current_ang = 0.0
+        self.current_vel = 0.1
+        self.current_ang = 0.3
 
         self.max_vel = 0.3
 
@@ -53,16 +53,12 @@ class RobotSocketClient:
     def stop(self):
         self.__send_vel(0.0, 0.0)
     
-    def move_forward(self, speed:float):
-        if speed < 0.0:
-            raise ValueError("Speed must be positive")
-        self.current_vel = speed
+    def move_forward(self):
+        self.current_vel = abs(self.current_vel)
         self.__send_vel(self.current_vel, 0.0)
     
-    def move_backward(self, speed:float):
-        if speed < 0.0:
-            raise ValueError("Speed must be positive")
-        self.current_vel = -speed
+    def move_backward(self):
+        self.current_vel = -abs(self.current_vel)
         self.__send_vel(self.current_vel, 0.0)
     
     def increase_vel(self, d=0.02):
@@ -118,8 +114,7 @@ class RobotSocketClient:
         self.__send_color("i")
     
     def __send_message(self, msg):
-        print(f'Sending message: {msg}')
-        if self.is_running:
+        if self.is_connected():
             self.client.sendall(msg.encode())
 
 
