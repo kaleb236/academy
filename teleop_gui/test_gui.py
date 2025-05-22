@@ -9,7 +9,7 @@ class MyApp(QWidget):
         self.initUI()
 
         self.speed = 0.12
-        self.socket_teleop = SocketTeleop(callback=self.socket_callback, host='192.168.31.28', port=65432)
+        self.socket_teleop = SocketTeleop(callback=self.socket_callback, host='localamr.local', port=65432)
         self.socket_teleop.start()
         
     def initUI(self):
